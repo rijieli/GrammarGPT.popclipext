@@ -1,6 +1,6 @@
 # GrammarGPT
 
-EN/[zh_CN](https://github.com/rijieli/GrammarGPT.popclipext/README_zhCN.md)
+EN | [[zh_CN]](https://github.com/rijieli/GrammarGPT.popclipext/blob/main/README_zhCN.md)
 
 PopClip extension to correct grammar using OpenAI's GPT API.
 
