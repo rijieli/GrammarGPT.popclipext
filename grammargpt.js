@@ -35,6 +35,14 @@ function getTranscript(n) {
 // the main action
 const action = async (input, options) => {
   messages.length = 0;
+
+  if (isEmpty(input.text)) {
+    popclip.showText("⚠️ No input text");
+    return;
+  }
+
+  print("input.text: " + input.text);
+
   // if options baseurl not empty using this or openai official api url
   const baseUrl = optionOrDefault(options.baseurl, "https://api.openai.com/v1");
 
@@ -49,11 +57,15 @@ const action = async (input, options) => {
   });
 
   messages.push({ role: "user", content: input.text });
+
+  print(messages)
+
   // send the whole message history to OpenAI
   try {
     const { data } = await openai.post("chat/completions", {
       model: options.model || "gpt-3.5-turbo",
       messages,
+      temperature: 0
     });
     // add the response to the history
     messages.push(data.choices[0].message);
