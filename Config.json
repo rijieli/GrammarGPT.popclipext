@@ -1,0 +1,43 @@
+{
+    "name": "GrammarGPT",
+    "icon": "icon-g.svg",
+    "identifier": "com.ideasform.grammargpt",
+    "description": "Grammar correction using GPT API. Hold Shift (⇧) to copy the corrected text to the clipboard.",
+    "note": "You will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAI API key</a>",
+    "app": {
+      "name": "ChatGPT",
+      "link": "https://openai.com/blog/chatgpt"
+    },
+    "popclipVersion": 4069,
+    "module": "grammargpt.js",
+    "entitlements": [
+      "network"
+    ],
+    "options": [
+      {
+        "identifier": "apikey",
+        "label": "API Key",
+        "type": "string",
+        "description": "Obtain an API key from: https://platform.openai.com/account/api-keys"
+      },
+      {
+        "identifier": "prompt",
+        "label": "Custom Prompt",
+        "type": "string",
+        "description": "Default prompt: You will be provided with statements, and your task is to convert them to standard English."
+      },
+      {
+        "identifier": "baseurl",
+        "label": "Custom API endpoint",
+        "type": "string",
+        "description": "Use non-openai API endpoint. e.g. https://example.com/v1"
+      },
+      {
+        "identifier:": "model",
+        "label": "Model",
+        "type": "multiple",
+        "defaultValue": "gpt-3.5-turbo",
+        "values": ["gpt-3.5-turbo", "gpt-4"]
+      }
+    ]
+  }
