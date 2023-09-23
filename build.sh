@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# If the parameter is "-clean", then delete all files in the BuildCache and end the script.
+if [ "$1" == "-clean" ]; then
+    rm -rf GrammarGPT.popclipext
+    rm -rf GrammarGPT.popclipext.zip
+    exit 0
+fi
+
+
 if [ ! -d "GrammarGPT.popclipext" ]; then
     mkdir GrammarGPT.popclipext
 fi
