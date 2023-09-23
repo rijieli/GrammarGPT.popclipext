@@ -1,13 +1,18 @@
 #!/bin/bash
 
-if [ ! -d "BuildCache" ]; then
-    mkdir BuildCache
+if [ ! -d "GrammarGPT.popclipext" ]; then
+    mkdir GrammarGPT.popclipext
 fi
 
-cp *.json BuildCache/
-cp *.js BuildCache/
-cp *.svg BuildCache/
+cp *.json GrammarGPT.popclipext/
+cp *.js GrammarGPT.popclipext/
+cp *.svg GrammarGPT.popclipext/
 
-zip -vr GrammarGPT.popclipext.zip BuildCache
+# zip all files in BuildCache to GrammarGPT.popclipext.zip
 
-rm -rf BuildCache/*
+cd GrammarGPT.popclipext
+zip -r GrammarGPT.popclipext.zip *
+
+# move zip file to root directory
+
+mv GrammarGPT.popclipext.zip ../

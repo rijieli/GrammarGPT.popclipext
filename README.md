@@ -38,6 +38,10 @@ Default prompt: You will be provided with statements, and your task is to conver
 
 If you not using OpenAI's default API endpoint, you can provide a custom endpoint to use instead. e.g. `https://example.com/v1/`.
 
+#### Paste Last Button
+
+Show a button in list to paste the last result.
+
 ### Errors
 
 You may see the following error:

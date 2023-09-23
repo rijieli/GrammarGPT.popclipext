@@ -40,11 +40,11 @@
         "values": ["gpt-3.5-turbo", "gpt-4"]
       },
       {
-        "identifier": "showCopy",
-        "label": "Show Copy Last Button",
+        "identifier": "showPaste",
+        "label": "Paste Last Button",
         "type": "boolean",
         "defaultValue": false,
-        "description": "Show a button to copy last result."
+        "description": "Show a button to paste last result."
       }
     ]
   }

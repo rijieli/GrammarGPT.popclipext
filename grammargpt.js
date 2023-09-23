@@ -73,11 +73,11 @@ function getErrorInfo(error) {
   }
 }
 
-const copyResult = async (input, options) => {
+const pastLastResult = async (input, options) => {
   if (isEmpty(getTranscript(1))) {
     popclip.showText("⚠️ No previous result");
   } else {
-    popclip.copyText(getTranscript(1));
+    popclip.pasteText(getTranscript(1));
   }
 };
 
@@ -89,9 +89,9 @@ exports.actions = [
     code: action,
   },
   {
-    title: "GrammarGPT: Copy last",
-    icon: "icon-copy.svg",
-    code: copyResult,
-    requirements: ["option-showCopy=1"],
+    title: "GrammarGPT: Paste last",
+    icon: "icon-paste.svg",
+    code: pastLastResult,
+    requirements: ["option-showPaste=1"],
   },
 ];
