@@ -20,6 +20,10 @@ function optionOrDefault(str, defalutValue) {
   }
 }
 
+function wait(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
 // get the content of the last `n` messages from the chat, trimmed and separated by double newlines
 function getTranscript(n) {
   return messages
@@ -55,9 +59,21 @@ const action = async (input, options) => {
     messages.push(data.choices[0].message);
     // if holding shift, copy just the response.
     // else, show correction result.
+
     popclip.showText(getTranscript(1));
-    if (popclip.modifiers.shift) {
-      popclip.copyText(getTranscript(1));
+
+    switch (options.didGetResponse) {
+      case "Paste":
+        popclip.pasteText(getTranscript(1));
+        break;
+      case "Append":
+        popclip.pasteText(input.text + "\n\n" + getTranscript(1) + "\n");
+        break;
+      case "Copy":
+        popclip.copyText(getTranscript(1));
+        break;
+      default:
+        break;
     }
   } catch (e) {
     popclip.showText(getErrorInfo(e));

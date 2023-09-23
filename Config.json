@@ -16,35 +16,42 @@
     "options": [
       {
         "identifier": "apikey",
-        "label": "API Key",
-        "type": "string",
-        "description": "Obtain an API key from: https://platform.openai.com/account/api-keys"
-      },
-      {
-        "identifier": "prompt",
-        "label": "Custom Prompt",
-        "type": "string",
-        "description": "Default prompt: You will be provided with statements, and your task is to convert them to standard English."
-      },
-      {
-        "identifier": "baseurl",
-        "label": "Custom API endpoint",
-        "type": "string",
-        "description": "Use non-openai API endpoint. e.g. https://example.com/v1"
+        "label": "OpenAI API Key",
+        "type": "string"
       },
       {
         "identifier:": "model",
         "label": "Model",
         "type": "multiple",
+        "inset": true,
         "defaultValue": "gpt-3.5-turbo",
         "values": ["gpt-3.5-turbo", "gpt-4"]
       },
       {
+        "identifier:": "didGetResponse",
+        "label": "After Getting Response",
+        "type": "multiple",
+        "defaultValue": "Show",
+        "values": ["Show", "Paste", "Append", "Copy"]
+      },
+      {
         "identifier": "showPaste",
-        "label": "Paste Last Button",
+        "label": "Paste Previous Button",
         "type": "boolean",
         "defaultValue": false,
         "description": "Show a button to paste last result."
+      },
+      {
+        "identifier": "prompt",
+        "label": "Custom Prompt(Optional)",
+        "type": "string",
+        "description": "Default: You will be provided with statements, and your task is to convert them to standard English."
+      },
+      {
+        "identifier": "baseurl",
+        "label": "Custom API URL(Optional)",
+        "type": "string",
+        "description": "For non-openai API endpoint. e.g. https://example.com/v1"
       }
     ]
   }

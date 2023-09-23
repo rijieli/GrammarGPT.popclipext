@@ -1,5 +1,7 @@
 # GrammarGPT
 
+EN/[zh_CN](https://github.com/rijieli/GrammarGPT.popclipext/README_zhCN.md)
+
 PopClip extension to correct grammar using OpenAI's GPT API.
 
 <img src="https://github.com/rijieli/GrammarGPT.popclipext/blob/9a03cae93802957393437e8dc2146baea3a4ad42/GrammarGPT.gif" width="400" alt="Demo">
@@ -7,14 +9,6 @@ PopClip extension to correct grammar using OpenAI's GPT API.
 **Note: Requires pre-paid API credits on your OpenAI account.**
 
 ## Description
-
-### Actions
-
-The main action ends the selected text to OpenAI and returns the corrected text.
-
-Modifiers:
-
-- Hold Shift(⇧) to copy result to clipboard.
 
 ### Installation
 
@@ -35,19 +29,26 @@ To use this extension, you need to provide it with an API Key for an OpenAI acco
 
 Available values are `gpt-3.5-turbo` and `gpt-4`. Note that some accounts might not be able to access the GPT-4 model — see OpenAI's documentation for details.
 
-#### Custom prompt
+#### After Getting Response
+
+* Show: Do nothing just show the result.
+* Paste: Paste the result to the current position.
+* Append: Insert a blank line, then paste the result.
+* Copy: Copy the result to the clipboard.
+
+#### Custom prompt(optional)
 
 You can provide a custom prompt to use instead of the default prompt. The prompt should be a single line of text.
 
-Default prompt: You will be provided with statements, and your task is to convert them to standard English.
+Default prompt from [OpenAI](https://platform.openai.com/examples/default-grammar): You will be provided with statements, and your task is to convert them to standard English.
 
-#### Custom API endpoint
+#### Custom API URL(optional)
 
 If you not using OpenAI's default API endpoint, you can provide a custom endpoint to use instead. e.g. `https://example.com/v1/`.
 
-#### Paste Last Button
+#### Paste Previous Button
 
-Show a button in list to paste the last result.
+Show a button in PopClip, click it to paste the previous result.
 
 ### Errors
 
