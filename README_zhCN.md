@@ -1,6 +1,6 @@
 # GrammarGPT
 
-zh_CN | [[EN]](https://github.com/rijieli/GrammarGPT.popclipext)
+[EN](https://github.com/rijieli/GrammarGPT.popclipext) | [zh_CN]
 
 PopClip 扩展，使用 OpenAI 的 GPT API 来纠正语法。
 
