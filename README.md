@@ -16,6 +16,11 @@ Modifiers:
 
 - Hold Shift(⇧) to copy result to clipboard.
 
+### Installation
+
+1. Download and unzip [GrammarGPT.popclipext.zip](https://github.com/rijieli/GrammarGPT.popclipext/releases/latest/download/GrammarGPT.popclipext.zip).
+2. Double-click the *GrammarGPT.popclipext* file to install.
+
 ### Configuration
 
 #### API Key
