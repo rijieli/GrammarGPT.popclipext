@@ -8,11 +8,11 @@ PopClip extension to correct grammar using OpenAI's GPT API.
 
 ### Actions
 
-The main action, **Chat**, sends the selected text to OpenAI and returns the corrected text.
+The main action ends the selected text to OpenAI and returns the corrected text.
 
 Modifiers:
 
-- Hold Shift(⇧) to copy just the response to the clipboard.
+- Hold Shift(⇧) to copy result to clipboard.
 
 ### Configuration
 
