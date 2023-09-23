@@ -3,12 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = exports.getErrorInfo = void 0;
 const axios_1 = require("axios");
 
+const messages = [];
 let defalutPrompt =
   "You will be provided with statements, and your task is to convert them to standard English.";
 
+function isEmpty(str) {
+  return !str || str.length === 0;
+}
+
 // if option is empty, return default value
 function optionOrDefault(str, defalutValue) {
-  if (!str || str.length === 0) {
+  if (isEmpty(str) == true) {
     return defalutValue;
   } else {
     return str;
@@ -25,7 +30,7 @@ function getTranscript(n) {
 
 // the main action
 const action = async (input, options) => {
-  const messages = [];
+  messages.length = 0;
   // if options baseurl not empty using this or openai official api url
   const baseUrl = optionOrDefault(options.baseurl, "https://api.openai.com/v1");
 
@@ -50,10 +55,9 @@ const action = async (input, options) => {
     messages.push(data.choices[0].message);
     // if holding shift, copy just the response.
     // else, show correction result.
+    popclip.showText(getTranscript(1));
     if (popclip.modifiers.shift) {
       popclip.copyText(getTranscript(1));
-    } else {
-      popclip.showText(getTranscript(2));
     }
   } catch (e) {
     popclip.showText(getErrorInfo(e));
@@ -68,11 +72,26 @@ function getErrorInfo(error) {
     return String(error);
   }
 }
+
+const copyResult = async (input, options) => {
+  if (isEmpty(getTranscript(1))) {
+    popclip.showText("⚠️ No previous result");
+  } else {
+    popclip.copyText(getTranscript(1));
+  }
+};
+
 exports.getErrorInfo = getErrorInfo;
 // export the actions
 exports.actions = [
   {
-    title: "Grammar correction",
+    title: "GrammarGPT: Correction",
     code: action,
+  },
+  {
+    title: "GrammarGPT: Copy last",
+    icon: "icon-copy.svg",
+    code: copyResult,
+    requirements: ["option-showCopy=1"],
   },
 ];
