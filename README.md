@@ -77,3 +77,7 @@ Requires PopClip 2022.12 and an Open AI Platform account.
 ### 2023-09-23
 
 - First release
+
+### 2023-09-23
+
+- New options `After Getting Response` to control the behavior after getting response.
