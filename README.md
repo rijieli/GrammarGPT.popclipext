@@ -2,6 +2,8 @@
 
 PopClip extension to correct grammar using OpenAI's GPT API.
 
+<img src="https://github.com/rijieli/GrammarGPT.popclipext/blob/9a03cae93802957393437e8dc2146baea3a4ad42/GrammarGPT.gif" width="400" alt="Demo">
+
 **Note: Requires pre-paid API credits on your OpenAI account.**
 
 ## Description
