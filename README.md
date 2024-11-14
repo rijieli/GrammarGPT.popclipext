@@ -25,10 +25,6 @@ To use this extension, you need to provide it with an API Key for an OpenAI acco
 2. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in
    the extension's settings.
 
-#### Model
-
-Available values are `gpt-3.5-turbo` and `gpt-4`. Note that some accounts might not be able to access the GPT-4 model — see OpenAI's documentation for details.
-
 #### After Getting Response
 
 * Show: Do nothing just show the result.
@@ -73,6 +69,11 @@ Roger Lee <https://github.com/rijieli>
 Requires PopClip 2022.12 and an Open AI Platform account.
 
 ## Changelog
+
+### 2024-11-14
+
+- Update model list to newest version
+- Remove spaces in the selected text
 
 ### 2023-09-23
 
