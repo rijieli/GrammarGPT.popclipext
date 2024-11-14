@@ -30,7 +30,7 @@
       "label": "Action When Done",
       "type": "multiple",
       "defaultValue": "Show",
-      "values": ["Show", "Paste", "Append", "Copy"]
+      "values": ["Show", "Copy", "Paste", "Append"]
     },
     {
       "identifier": "showPaste",

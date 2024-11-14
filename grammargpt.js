@@ -56,16 +56,21 @@ const action = async (input, options) => {
     content: optionOrDefault(options.prompt, defalutPrompt),
   });
 
-  messages.push({ role: "user", content: input.text });
+  const inputText = input.text.trim();
+  const quotedText =
+    (!inputText.startsWith("$") ? "$" : "") +
+    inputText +
+    (!inputText.endsWith("$") ? "$" : "");
+  messages.push({ role: "user", content: quotedText });
 
-  print(messages)
+  print(messages);
 
   // send the whole message history to OpenAI
   try {
     const { data } = await openai.post("chat/completions", {
-      model: options.model || "gpt-3.5-turbo",
+      model: options.model || "gpt-4o-mini",
       messages,
-      temperature: 0
+      temperature: 0,
     });
     // add the response to the history
     messages.push(data.choices[0].message);
