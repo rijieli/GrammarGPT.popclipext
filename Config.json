@@ -1,57 +1,55 @@
 {
-    "name": "GrammarGPT",
-    "icon": "icon-g.svg",
-    "identifier": "com.ideasform.grammargpt",
-    "description": "Grammar correction using GPT API. Hold Shift (⇧) to copy the corrected text to the clipboard.",
-    "note": "You will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAI API key</a>",
-    "app": {
-      "name": "ChatGPT",
-      "link": "https://openai.com/blog/chatgpt"
+  "name": "GrammarGPT",
+  "icon": "icon-g.svg",
+  "identifier": "com.ideasform.grammargpt",
+  "description": "Grammar correction using GPT API. Hold Shift (⇧) to copy the corrected text to the clipboard.",
+  "note": "You will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAI API key</a>",
+  "app": {
+    "name": "ChatGPT",
+    "link": "https://openai.com/blog/chatgpt"
+  },
+  "popclipVersion": 4069,
+  "module": "grammargpt.js",
+  "entitlements": ["network"],
+  "options": [
+    {
+      "identifier": "apikey",
+      "label": "OpenAI API Key",
+      "type": "string"
     },
-    "popclipVersion": 4069,
-    "module": "grammargpt.js",
-    "entitlements": [
-      "network"
-    ],
-    "options": [
-      {
-        "identifier": "apikey",
-        "label": "OpenAI API Key",
-        "type": "string"
-      },
-      {
-        "identifier:": "model",
-        "label": "Model",
-        "type": "multiple",
-        "inset": true,
-        "defaultValue": "gpt-3.5-turbo",
-        "values": ["gpt-3.5-turbo", "gpt-4"]
-      },
-      {
-        "identifier:": "didGetResponse",
-        "label": "After Getting Response",
-        "type": "multiple",
-        "defaultValue": "Show",
-        "values": ["Show", "Paste", "Append", "Copy"]
-      },
-      {
-        "identifier": "showPaste",
-        "label": "Paste Previous Button",
-        "type": "boolean",
-        "defaultValue": false,
-        "description": "Show a button to paste last result."
-      },
-      {
-        "identifier": "prompt",
-        "label": "Custom Prompt(Optional)",
-        "type": "string",
-        "description": "Default: You will be provided with statements, and your task is to convert them to standard English."
-      },
-      {
-        "identifier": "baseurl",
-        "label": "Custom API URL(Optional)",
-        "type": "string",
-        "description": "For non-openai API endpoint. e.g. https://example.com/v1"
-      }
-    ]
-  }
+    {
+      "identifier:": "model",
+      "label": "Model",
+      "type": "multiple",
+      "inset": true,
+      "defaultValue": "gpt-4o-mini",
+      "values": ["gpt-4o-mini", "gpt-4o", "gpt-4", "gpt-4-turbo"]
+    },
+    {
+      "identifier:": "didGetResponse",
+      "label": "Action When Done",
+      "type": "multiple",
+      "defaultValue": "Show",
+      "values": ["Show", "Paste", "Append", "Copy"]
+    },
+    {
+      "identifier": "showPaste",
+      "label": "Paste Previous Button",
+      "type": "boolean",
+      "defaultValue": false,
+      "description": "Show a button to paste last result."
+    },
+    {
+      "identifier": "prompt",
+      "label": "Custom Prompt(Optional)",
+      "type": "string",
+      "description": "Default: You will be provided with statements, and your task is to convert them to standard English."
+    },
+    {
+      "identifier": "baseurl",
+      "label": "API Endpoint(Optional)",
+      "type": "string",
+      "description": "For non-openai API endpoint. e.g. https://example.com/v1"
+    }
+  ]
+}
